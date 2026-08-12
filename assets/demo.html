@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Romanjo Review — Free Read-only Kit</title>
+  <link rel="stylesheet" href="./demo.css">
+</head>
+<body>
+  <main class="rr-kit">
+    <header>
+      <div>
+        <p class="muted">Open-source community edition · offline demo</p>
+        <h1>Read-only Review Kit</h1>
+      </div>
+      <label>Replace local image <input id="image-picker" type="file" accept="image/*"></label>
+    </header>
+    <div class="grid">
+      <section class="panel">
+        <div id="review-stage" aria-live="polite"></div>
+        <div class="rr-legend" aria-label="Overlay legend">
+          <span>Depth regions</span><span>Structural line</span><span>Likely saliency point</span>
+        </div>
+      </section>
+      <div class="stack">
+        <section class="panel">
+          <h2>Review summary</h2>
+          <p id="summary"></p>
+          <div id="meta" class="rr-meta"></div>
+        </section>
+        <section class="panel">
+          <h2>Normalized histogram</h2>
+          <canvas id="histogram" class="rr-histogram" aria-label="Luminance and RGB histogram"></canvas>
+          <p class="muted">Raw 16-bin values from the review artifact; the chart does not recompute or fabricate image evidence.</p>
+        </section>
+      </div>
+    </div>
+    <p class="boundary"><strong>Free Kit boundary:</strong> this example renders a validated review artifact in source-image coordinates. It intentionally excludes control editing, comments, versions, provider dispatch, private rubrics, and training workflows.</p>
+  </main>
+  <script type="module" src="./demo.js"></script>
+</body>
+</html>

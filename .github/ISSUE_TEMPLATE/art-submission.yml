@@ -1,0 +1,63 @@
+name: Artwork review submission
+description: Submit a rights-cleared work for community critique or benchmark consideration.
+title: "[Artwork] "
+labels: ["artwork", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not upload private or non-consensual work. An Issue does not grant model-training permission or transfer copyright."
+  - type: input
+    id: artwork
+    attributes:
+      label: Artwork link
+      description: Use a stable, lawful URL or attach a suitable review copy.
+    validations:
+      required: true
+  - type: input
+    id: creator
+    attributes:
+      label: Creator credit
+      description: Name or pseudonym exactly as it should appear.
+    validations:
+      required: true
+  - type: dropdown
+    id: authority
+    attributes:
+      label: Your authority to submit
+      options:
+        - I am the creator/rightsholder
+        - I have explicit permission
+        - The work is lawfully licensed for this use
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: Artwork license or permission scope
+    validations:
+      required: true
+  - type: dropdown
+    id: training
+    attributes:
+      label: Model-training consent
+      options:
+        - No model training
+        - Training consent is separately documented
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Review question
+      description: What should reviewers attend to?
+    validations:
+      required: true
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Declarations
+      options:
+        - label: I have removed private data and understand this submission is public.
+          required: true
+        - label: I understand review and benchmark inclusion are separate decisions.
+          required: true

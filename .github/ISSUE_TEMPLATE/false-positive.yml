@@ -1,0 +1,30 @@
+name: False positive or misleading review
+description: Help the benchmark learn from an incorrect similarity, attribution, or aesthetic claim.
+title: "[False positive] "
+labels: ["false-positive", "benchmark"]
+body:
+  - type: input
+    id: case
+    attributes:
+      label: Case or review link
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: Incorrect or misleading claim
+    validations:
+      required: true
+  - type: textarea
+    id: counterevidence
+    attributes:
+      label: Counterevidence
+      description: Explain provenance, independent creation, commonplace elements, licensing, or analysis error.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Safer corrected wording or expected behavior
+    validations:
+      required: true

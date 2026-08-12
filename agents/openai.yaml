@@ -1,0 +1,4 @@
+interface:
+  display_name: "Romanjo Review"
+  short_description: "Turn any image into structured visual-review data"
+  default_prompt: "Use $romanjo-review to analyze this image and return a validated Romanjo Review JSON artifact."

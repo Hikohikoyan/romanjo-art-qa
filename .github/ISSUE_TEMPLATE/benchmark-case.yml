@@ -1,0 +1,39 @@
+name: Benchmark case
+description: Propose a difficult, rights-cleared aesthetic-analysis case.
+title: "[Benchmark] "
+labels: ["benchmark", "proposal"]
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Lawful source
+      description: Link to the image and its license/permission record.
+    validations:
+      required: true
+  - type: textarea
+    id: task
+    attributes:
+      label: Evaluation task
+      description: State what a capable reviewer should analyze.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Expected observable evidence
+      description: Do not provide hidden reasoning; list visible anchors and acceptable interpretations.
+    validations:
+      required: true
+  - type: textarea
+    id: failures
+    attributes:
+      label: Known failure modes and counterexamples
+    validations:
+      required: true
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: Rights
+      options:
+        - label: I have verified that the linked material may be used for public evaluation.
+          required: true

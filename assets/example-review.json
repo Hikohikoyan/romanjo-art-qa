@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "image": {"source": "example.jpg", "width": 1600, "height": 900, "alt": "A bright red subject isolated against a cool architectural background."},
+  "summary": {"one_line": "A vivid focal subject drives a clean diagonal reading.", "strengths": ["Strong subject separation", "Clear directional flow"], "risks": ["Background detail competes at the right edge"], "confidence": 0.86},
+  "saliency": [
+    {"id": "s1", "rank": 1, "center": {"x": 0.36, "y": 0.43}, "radius": 0.06, "weight": 0.94, "drivers": ["contrast", "saturation", "semantic-distinctiveness"], "evidence": "The red subject has the strongest warm-cool and saturation contrast.", "confidence": 0.93},
+    {"id": "s2", "rank": 2, "center": {"x": 0.69, "y": 0.31}, "radius": 0.15, "weight": 0.67, "drivers": ["detail", "leading-line"], "evidence": "Fine edges and a diagonal structural line pull attention upward-right.", "confidence": 0.78}
+  ],
+  "gaze_path": {"point_ids": ["s1", "s2"], "curve": "smooth", "duration_ms": 4200, "interpretation": "Attention locks on the colored subject before expanding along the architecture."},
+  "depth": {"method": "semantic-object-regions", "regions": [
+    {"id": "d1", "label": "foreground subject", "band": "near", "depth_order": 1, "polygon": [{"x": 0.24, "y": 0.2}, {"x": 0.48, "y": 0.2}, {"x": 0.5, "y": 0.75}, {"x": 0.23, "y": 0.75}], "edge_softness": 0.18, "confidence": 0.9},
+    {"id": "d2", "label": "architecture", "band": "far", "depth_order": 2, "polygon": [{"x": 0.0, "y": 0.0}, {"x": 1.0, "y": 0.0}, {"x": 1.0, "y": 1.0}, {"x": 0.0, "y": 1.0}], "edge_softness": 0.45, "confidence": 0.8}
+  ], "cues": ["occlusion", "perspective", "focus"], "confidence": 0.84},
+  "composition": {"layout": "diagonal", "balance": "dynamic", "anchors": [{"label": "red subject", "position": {"x": 0.36, "y": 0.43}}], "structural_lines": [{"start": {"x": 0.2, "y": 0.72}, "end": {"x": 0.82, "y": 0.18}, "role": "leading", "confidence": 0.82}], "golden_spiral": {"pole": {"x": 0.38, "y": 0.42}, "rotation": "clockwise", "scale": 0.9, "anchor_label": "red subject", "confidence": 0.7}, "interpretation": "A rising diagonal links the dominant subject to secondary detail."},
+  "color": {"measurement": "visually-estimated", "palette": [{"hex": "#D94432", "weight": 0.35, "role": "accent"}, {"hex": "#334B63", "weight": 0.45, "role": "dominant"}, {"hex": "#D7D2C8", "weight": 0.2, "role": "neutral"}], "histogram": {
+    "luminance": [0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.1, 0.1, 0.1, 0.09, 0.08, 0.07, 0.05, 0.04, 0.02],
+    "red": [0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.1, 0.1, 0.1, 0.09, 0.08, 0.07, 0.05, 0.04, 0.02],
+    "green": [0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.1, 0.1, 0.1, 0.09, 0.08, 0.07, 0.05, 0.04, 0.02],
+    "blue": [0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.1, 0.1, 0.1, 0.09, 0.08, 0.07, 0.05, 0.04, 0.02]
+  }, "contrast": "high", "temperature": "mixed", "interpretation": "A restrained cool field makes the warm accent dominant."},
+  "motion": {"energy": 0.58, "directions": [{"from": {"x": 0.3, "y": 0.65}, "to": {"x": 0.76, "y": 0.22}, "strength": 0.78}], "rhythm": "flowing", "evidence": "Diagonal edges produce an upward-right directional read."},
+  "narrative": {"visible_content": ["red subject", "cool architecture"], "story_reading": "An isolated warm presence appears to move through an ordered, cool environment.", "mood_keywords": ["focused", "cinematic", "tense"], "ambiguities": ["The subject's exact identity is unclear"]},
+  "generation_guidance": {"preserve": [{"priority": "high", "action": "preserve", "target": "warm-cool subject separation", "expected_effect": "Maintain immediate focal clarity"}], "change": [{"priority": "medium", "action": "reduce", "target": "right-edge micro-detail", "expected_effect": "Prevent the second fixation from competing too early"}], "negative_constraints": ["Do not flatten the foreground and background into one depth plane"]}
+}

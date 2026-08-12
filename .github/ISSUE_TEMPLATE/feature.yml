@@ -1,0 +1,32 @@
+name: Feature, partnership, or reviewer-network proposal
+description: Propose a public feature, paid pilot, named benchmark track, sponsorship, or network role.
+title: "[Proposal] "
+labels: ["proposal"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Proposal type
+      options:
+        - Public feature
+        - Artist network
+        - Critic or curator network
+        - PLUS or PRO access
+        - EXPERT studio or enterprise pilot
+        - Named benchmark track or sponsorship
+    validations:
+      required: true
+  - type: textarea
+    id: need
+    attributes:
+      label: Need and proposed contribution
+    validations:
+      required: true
+  - type: textarea
+    id: integrity
+    attributes:
+      label: Rights, consent, and conflict safeguards
+      description: Required for partnerships and sponsored work.
+  - type: markdown
+    attributes:
+      value: "Do not post contracts, credentials, private artwork, budgets, or personal contact details in a public Issue."

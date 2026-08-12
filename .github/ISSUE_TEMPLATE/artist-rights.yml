@@ -1,0 +1,35 @@
+name: Artist rights or attribution concern
+description: Request correction or document a provenance concern without making a public verdict.
+title: "[Artist rights] "
+labels: ["artist-rights", "needs-human-review"]
+body:
+  - type: markdown
+    attributes:
+      value: "Share only minimum public information. Use private security/reporting channels for personal data, threats, or confidential records."
+  - type: textarea
+    id: concern
+    attributes:
+      label: Concern
+      description: Use neutral language and distinguish facts from hypotheses.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public evidence
+      description: Include provenance records, chronology, creator declarations, licenses, or region-specific similarity leads.
+    validations:
+      required: true
+  - type: input
+    id: correction
+    attributes:
+      label: Requested correction or outcome
+    validations:
+      required: true
+  - type: checkboxes
+    id: acknowledgement
+    attributes:
+      label: Acknowledgement
+      options:
+        - label: I understand similarity is not proof of authorship, copying, or infringement.
+          required: true
