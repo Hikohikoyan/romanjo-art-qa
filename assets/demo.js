@@ -4,7 +4,8 @@ const response = await fetch("./example-review.json");
 if (!response.ok) throw new Error(`Could not load example-review.json (${response.status})`);
 const review = await response.json();
 const stage = new ReadonlyReviewStage(document.querySelector("#review-stage"), review);
-stage.setImageSource(`./${review.image.source}`);
+// Keep the bundled example on the deterministic canvas fallback. A visitor's
+// selected image replaces it locally without an upload.
 
 document.querySelector("#summary").textContent = review.summary.one_line;
 document.querySelector("#meta").innerHTML = [
@@ -26,4 +27,3 @@ document.querySelector("#image-picker").addEventListener("change", (event) => {
   stage.image.addEventListener("load", () => URL.revokeObjectURL(url), { once: true });
   stage.setImageSource(url);
 });
-

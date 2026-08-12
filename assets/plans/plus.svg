@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <rect width="640" height="360" rx="28" fill="#171814"/><path d="m350 0 290 0v360H130z" fill="#de835d" opacity=".14"/>
+  <text x="42" y="55" fill="#de835d" font-family="Arial" font-size="16" font-weight="700" letter-spacing="3">PERSONAL CONTROL</text>
+  <text x="42" y="132" fill="#f2f3ea" font-family="Arial" font-size="60" font-weight="700">PLUS</text>
+  <text x="42" y="176" fill="#aeb4a5" font-family="Arial" font-size="22">Edit and compare · ¥49</text>
+  <path d="M55 284c95-115 168 52 255-45s157 35 276-82" fill="none" stroke="#de835d" stroke-width="4"/>
+  <circle cx="55" cy="284" r="8" fill="#de835d"/><circle cx="310" cy="239" r="8" fill="#de835d"/><circle cx="586" cy="157" r="8" fill="#de835d"/>
+</svg>

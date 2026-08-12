@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <rect width="640" height="360" rx="28" fill="#121510"/><path d="M0 260 220 40h105L35 330z" fill="#cbe75a" opacity=".12"/>
+  <text x="42" y="55" fill="#cbe75a" font-family="Arial" font-size="16" font-weight="700" letter-spacing="3">PUBLIC START</text>
+  <text x="42" y="132" fill="#f2f3ea" font-family="Arial" font-size="60" font-weight="700">FREE</text>
+  <text x="42" y="176" fill="#aeb4a5" font-family="Arial" font-size="22">Read and learn</text>
+  <path d="M42 236h460M42 272h370M42 308h290" stroke="#cbe75a" stroke-width="3" opacity=".68"/>
+  <circle cx="540" cy="92" r="47" fill="none" stroke="#cbe75a" stroke-width="3"/><circle cx="540" cy="92" r="9" fill="#cbe75a"/>
+</svg>

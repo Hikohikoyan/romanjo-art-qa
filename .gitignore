@@ -21,6 +21,7 @@ build/
 coverage/
 tmp/
 *.log
+.playwright-cli/
 analysis-data/
 paid/
 mcp/

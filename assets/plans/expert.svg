@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <rect width="640" height="360" rx="28" fill="#161316"/><path d="M450 0h190v360H255z" fill="#b493d2" opacity=".13"/>
+  <text x="42" y="55" fill="#b493d2" font-family="Arial" font-size="16" font-weight="700" letter-spacing="3">PRIVATE ART DIRECTION</text>
+  <text x="42" y="132" fill="#f2f3ea" font-family="Arial" font-size="60" font-weight="700">EXPERT</text>
+  <text x="42" y="176" fill="#aeb4a5" font-family="Arial" font-size="22">Your own art director · ¥998+</text>
+  <g stroke="#b493d2" stroke-width="3" fill="#161316"><circle cx="100" cy="275" r="24"/><circle cx="240" cy="236" r="24"/><circle cx="390" cy="286" r="24"/><circle cx="535" cy="221" r="24"/><path d="m124 268 92-26m48 3 102 33m47-5 98-41"/></g>
+</svg>
