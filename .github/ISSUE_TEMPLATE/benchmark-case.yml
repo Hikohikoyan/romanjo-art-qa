@@ -3,6 +3,12 @@ description: Propose a difficult, rights-cleared aesthetic-analysis case.
 title: "[Benchmark] "
 labels: ["benchmark", "proposal"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        A useful benchmark creates disagreement that can be checked. Give reviewers one bounded question, visible anchors and a known trap.
+
+        好的 Benchmark 会产生可以复核的分歧。请提供一个明确问题、画面依据和已知陷阱。
   - type: input
     id: source
     attributes:
@@ -13,8 +19,9 @@ body:
   - type: textarea
     id: task
     attributes:
-      label: Evaluation task
-      description: State what a capable reviewer should analyze.
+      label: One question / 一个问题
+      description: State the single judgment reviewers should test. Avoid "please review everything."
+      placeholder: Which element receives the first fixation, and does that order support the intended message?
     validations:
       required: true
   - type: textarea
@@ -22,12 +29,37 @@ body:
     attributes:
       label: Expected observable evidence
       description: Do not provide hidden reasoning; list visible anchors and acceptable interpretations.
+      placeholder: |
+        - The title occupies ...% of image width.
+        - The brightest local contrast appears at ...
+        - Two interpretations we should accept are ...
     validations:
       required: true
   - type: textarea
     id: failures
     attributes:
       label: Known failure modes and counterexamples
+      placeholder: Name the tempting claim a reviewer or detector may make without enough evidence.
+    validations:
+      required: true
+  - type: textarea
+    id: disagreement
+    attributes:
+      label: What would change your mind?
+      description: Name a measurement, annotation or expert observation that could overturn your expected answer.
+    validations:
+      required: true
+  - type: dropdown
+    id: contributors
+    attributes:
+      label: Reviewers wanted
+      multiple: true
+      options:
+        - Artists and art directors
+        - Critics and curators
+        - Vision and graphics engineers
+        - Copyright and provenance researchers
+        - General viewers
     validations:
       required: true
   - type: checkboxes
@@ -36,4 +68,6 @@ body:
       label: Rights
       options:
         - label: I have verified that the linked material may be used for public evaluation.
+          required: true
+        - label: I understand that similarity and detector scores are evidence, not authorship or infringement verdicts.
           required: true

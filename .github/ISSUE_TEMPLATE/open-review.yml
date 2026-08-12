@@ -1,0 +1,70 @@
+name: Open review discussion
+description: Start a focused, evidence-led discussion about one image or review claim.
+title: "[Open Review] "
+labels: ["discussion", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bring one image and one question. Strong replies separate visible facts, interpretation and revision advice.
+
+        一张图，一个问题。请把画面事实、个人解释和修改建议分开写。
+
+        画像は1点、問いは1つ。観察事実、解釈、修正案を分けてください。
+  - type: input
+    id: artwork
+    attributes:
+      label: Image and lawful source / 图片与合法来源 / 画像と正当な出典
+      description: Link a rights-cleared image or attach a review copy and credit the creator.
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: The question / 讨论问题 / 問い
+      placeholder: What should reviewers decide, and why does that decision matter to the work?
+    validations:
+      required: true
+  - type: textarea
+    id: first_read
+    attributes:
+      label: Your first read / 你的第一眼 / 最初の見方
+      description: Point to visible locations, shapes, colors or value relationships. Keep interpretation in a separate paragraph.
+    validations:
+      required: true
+  - type: textarea
+    id: alternate
+    attributes:
+      label: A competing reading / 另一种解释 / 別の解釈
+      description: Give the strongest reasonable disagreement with your own view.
+    validations:
+      required: true
+  - type: textarea
+    id: test
+    attributes:
+      label: One testable edit / 一个可验证修改 / 検証できる修正
+      placeholder: Change one control, state the expected visual effect, and name what would count as a failed edit.
+    validations:
+      required: true
+  - type: dropdown
+    id: voice
+    attributes:
+      label: Your perspective
+      options:
+        - Artist or art director
+        - Critic or curator
+        - Designer
+        - Vision or graphics engineer
+        - Copyright or provenance researcher
+        - Viewer
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Public review terms
+      options:
+        - label: I have authority to share this image or linked review copy.
+          required: true
+        - label: I will not treat similarity or a detector score as proof of copying, authorship or infringement.
+          required: true
