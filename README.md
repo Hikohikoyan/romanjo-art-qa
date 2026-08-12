@@ -5,9 +5,13 @@
   <p><a href="#中文">中文</a> · <a href="#english">English</a> · <a href="#日本語">日本語</a></p>
 </div>
 
-![Romanjo Art QA public read-only review interface shown as a diagonal comparison](assets/romanjo-art-qa-banner.png)
+![Romanjo Art QA 主站理念、产品档位、室内与游戏 UI 工作台六宫格](assets/romanjo-art-qa-banner.png)
 
-Romanjo Art QA 把图片评价整理为可检查的数据和修改方向。公开仓库提供 Agent Skill、Schema 与只读前端 Kit。它适合学习分析方法、提交艺术鉴赏案例和共建 benchmark。完整工作台、商业 MCP、私有评价规则、生成接入与训练系统不在此仓库公开。
+Banner 来自主站的真实工作台演示：左侧是室内图的对象、构图与明度证据，右侧是游戏 UI 的节奏框、评分与评论。Romanjo Art QA 把这类评价整理为可检查的数据和下一轮修改方向。公开仓库提供 Agent Skill、Schema 与只读前端 Kit。完整工作台、商业 MCP、私有评价规则、生成接入与训练系统保留在商业工程。
+
+| 主站理念 / Principles | 产品档位 / Access | 工作台实证 / Evidence desk |
+|---|---|---|
+| [![艺术权利、量化艺术与 OPC](assets/screens/rights-and-measure.png)](assets/screens/rights-and-measure.png) | [![FREE PLUS PRO EXPERT](assets/screens/access-levels.png)](assets/screens/access-levels.png) | [![室内图 Before 与 After 工作台](assets/screens/workbench-interior-after.png)](assets/screens/workbench-interior-after.png) |
 
 ## 四档产品 / Four plans / 4つのプラン
 
@@ -95,6 +99,25 @@ Issues 是公开鉴赏与 benchmark 共建入口。欢迎艺术家投稿已获�
 
 我们接受艺术家网络、评价家网络、展览、研究和冠名专题合作。赞助方不能购买标签、阈值或结论。
 
+### Issue 怎么参与，为什么值得参与
+
+公开讨论的价值来自可复核的分歧。每个 Issue 只处理一个问题，发起人要说明作品来源、画面证据和什么结果会改变自己的判断。
+
+| Issue 类型 | 你提交什么 | 社区形成什么 |
+|---|---|---|
+| Artwork review | 获授权作品、作者署名、一个具体评审问题 | 一份区分观察、解释和修改建议的公开评论记录 |
+| Open review | 第一眼判断、相反解释、一个可验证修改 | 能被设计实践者重复检验的审美讨论 |
+| Benchmark case | 明确任务、可见锚点、已知陷阱、反例 | 带版本和争议记录的测试案例，而不是无来源分数 |
+| False positive | 错误结论、反证、建议改写 | 误判档案与回归样本，防止同类问题重复出现 |
+| Artist rights | 来源、时间线、授权或更正请求 | 人工复核、异议和修订记录，不发布自动侵权裁决 |
+| Proposal | 研究、评价家网络、专题或商业试点的投入方式 | 有边界的共建任务；赞助、排名和结论分开管理 |
+
+Issue 中的作品默认不进入训练。只有权利人另行给出明确训练许可，并通过来源、用途、退出和保留期审核后，样本才可能进入候选数据集。
+
+### 研究与产品路线
+
+[ROADMAP.md](ROADMAP.md) 记录公开研究方向与共建门槛。近期重点是中西方艺术分析、空间设计理论、设计思维、视觉思维与视觉还原；随后扩展大众审美趋势、文化内核、图样纹样分析。基础风格 LoRA 只使用明确授权的数据，训练完成后还要经过留出集、负迁移检查和主美 Human Gate。
+
 ## English
 
 ### Quick start
@@ -112,6 +135,8 @@ Use Issues to submit rights-cleared art, propose hard review cases, and report f
 
 Artists, critics, curators, and researchers can join the reviewer network. We also discuss exhibitions, research, and named benchmark sponsorships. Sponsors cannot purchase labels, thresholds, or outcomes.
 
+See [ROADMAP.md](ROADMAP.md) for the contribution tracks, evidence requirements, and governed path from authorized references to evaluated base-style LoRA candidates.
+
 ## 日本語
 
 ### クイックスタート
@@ -128,6 +153,8 @@ python -m http.server 8000 --directory romanjo-review/assets
 Issues では、権利確認済み作品の投稿、難しい評価事例、誤検出報告を受け付けます。Romanjo は Content Credentials、作者申告、出典、類似候補を整理できます。類似性だけで盗用や作者を断定できません。異議がある結果には、人による再確認、反証、訂正手続きを用意します。[公開エビデンス手順](references/provenance-and-similarity.md)も確認してください。
 
 作家、評論家、キュレーター、研究者のネットワーク参加を歓迎します。展覧会、研究、冠名 benchmark も相談できます。スポンサーは評価ラベル、基準値、結論を購入できません。
+
+研究テーマ、Issue の提出物、許諾済み資料から評価済み基礎スタイル LoRA 候補までの手順は [ROADMAP.md](ROADMAP.md) に記載しています。
 
 ## 自愿赞赏 / Voluntary support / 任意の支援
 

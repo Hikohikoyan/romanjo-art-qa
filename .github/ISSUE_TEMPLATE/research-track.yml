@@ -1,0 +1,73 @@
+name: Research or cultural-analysis track
+description: Propose a sourced public track for art history, space, visual thinking, patterns, trends, or authorized style evaluation.
+title: "[Research track] "
+labels: ["research", "proposal", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A track needs a bounded question, qualified maintainers, lawful sources and an output the public can verify. Do not post private artwork, unpublished archives or training data.
+
+        研究专题要有明确问题、合适的维护者、合法来源和可复核产物。请勿提交私有作品、未公开档案或训练数据。
+  - type: dropdown
+    id: field
+    attributes:
+      label: Field / 方向
+      options:
+        - Chinese and East Asian art analysis
+        - Western art analysis
+        - Spatial and interior design theory
+        - Design thinking and visual thinking
+        - Visual reconstruction and design tokens
+        - Aesthetic trend analysis
+        - Cultural context and iconography
+        - Pattern, ornament and craft analysis
+        - Authorized base-style evaluation
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Bounded research question / 明确问题
+      description: State one judgment the track should test and the media or culture it covers.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources, permissions and attribution
+      description: List primary references, collection records, licenses, creator permissions, and access limits.
+    validations:
+      required: true
+  - type: textarea
+    id: contribution
+    attributes:
+      label: What you can contribute
+      description: Name your role, material, review time, annotation work, or engineering contribution.
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Public artifact and acceptance test
+      description: Define the benchmark cases, glossary, source guide, annotations, or evaluation report the community should receive.
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: Misreading, rights and representation risks
+      description: Name who should review the track, what should remain excluded, and how affected artists can contest a claim.
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Boundaries
+      options:
+        - label: I will keep observable evidence separate from cultural interpretation.
+          required: true
+        - label: I understand public submission does not grant model-training permission.
+          required: true
+        - label: I understand sponsorship cannot determine labels, thresholds, rankings or conclusions.
+          required: true
