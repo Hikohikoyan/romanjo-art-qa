@@ -1,4 +1,4 @@
 interface:
-  display_name: "Romanjo Review"
+  display_name: "Romanjo Art QA"
   short_description: "Turn any image into structured visual-review data"
-  default_prompt: "Use $romanjo-review to analyze this image and return a validated Romanjo Review JSON artifact."
+  default_prompt: "Use $romanjo-art-qa to analyze this image and return a validated Romanjo Art QA JSON artifact."

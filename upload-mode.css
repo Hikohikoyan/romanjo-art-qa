@@ -1,0 +1,70 @@
+.upload-button {
+  position: fixed;
+  top: 12px;
+  right: 16px;
+  z-index: 50;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 999px;
+  background: #d7ff3f;
+  color: #111;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.upload-button:hover {
+  background: #e4ff74;
+}
+
+.paid-button {
+  position: fixed;
+  top: 12px;
+  right: 150px;
+  z-index: 50;
+  margin-left: 0;
+}
+
+.upload-mode .case-tabs {
+  display: none !important;
+}
+
+.upload-mode .visual {
+  display: block;
+}
+
+.upload-mode .workbench {
+  height: auto;
+  min-height: 720px;
+}
+
+.upload-mode .analysis-panel {
+  height: auto;
+  overflow: visible;
+}
+
+.upload-mode .image-frame {
+  min-height: 640px;
+}
+
+.export-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #111;
+  color: #d7ff3f;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+
+.export-button:hover {
+  background: #000;
+}

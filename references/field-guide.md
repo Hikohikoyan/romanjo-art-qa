@@ -1,4 +1,4 @@
-# Romanjo Review field guide
+# Romanjo Art QA field guide
 
 Use this guide to calibrate schema fields. The JSON Schema remains authoritative.
 

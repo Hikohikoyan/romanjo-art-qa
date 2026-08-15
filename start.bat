@@ -21,9 +21,9 @@ if not defined PYTHON (
   exit /b 1
 )
 
-echo Starting the Romanjo Art QA demo at http://127.0.0.1:%PORT%/demo.html
-start "" %PYTHON% -m http.server %PORT% --directory "%~dp0assets"
+echo Starting romanjo-art-qa at http://127.0.0.1:%PORT%/
+start "romanjo-art-qa" %PYTHON% -m http.server %PORT% --directory "%~dp0."
 timeout /t 2 /nobreak >nul
-start "" "http://127.0.0.1:%PORT%/demo.html"
+start "romanjo-art-qa" "http://127.0.0.1:%PORT%/"
 
 endlocal

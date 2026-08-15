@@ -4,26 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Romanjo Art QA free read-only visual review kit.">
-  <title>Romanjo Review — Free Read-only Kit</title>
+  <title>Romanjo Art QA — Free Read-only Kit</title>
   <link rel="icon" href="./brand/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./demo.css">
 </head>
 <body>
   <main class="rr-kit">
-    <header class="site-header">
-      <a class="brand" href="../README.md" aria-label="Romanjo Art QA">
-        <img src="./brand/romanjo-logo.png" alt="Romanjo logo">
-        <span>Romanjo Art QA</span>
-      </a>
-      <p class="edition">FREE · read-only public kit</p>
-    </header>
-
-    <section class="hero">
-      <p class="eyebrow">From understanding the image to building your own art direction</p>
-      <h1>See what the image is doing.</h1>
-      <p class="intro">Inspect visible hierarchy, likely attention, composition, depth and color through a portable review artifact. This page renders supplied data locally. It does not run private analysis or send your image to a service.</p>
-    </section>
-
     <div class="grid">
       <section class="panel stage-panel">
         <div class="panel-heading">
@@ -43,6 +29,11 @@
           <div id="meta" class="rr-meta"></div>
         </section>
         <section class="panel">
+          <p class="kicker">Actionable guidance</p>
+          <h2>What to keep and change</h2>
+          <ul id="guidance" class="guidance-list"></ul>
+        </section>
+        <section class="panel">
           <p class="kicker">Measured or estimated data</p>
           <h2>Normalized histogram</h2>
           <canvas id="histogram" class="rr-histogram" aria-label="Luminance and RGB histogram"></canvas>
@@ -50,6 +41,8 @@
         </section>
       </div>
     </div>
+
+    <p id="analysis-status" class="analysis-status" role="status"></p>
 
     <section class="boundary" aria-labelledby="boundary-title">
       <p class="kicker">Public boundary</p>

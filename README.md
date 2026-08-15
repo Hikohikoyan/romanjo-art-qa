@@ -2,12 +2,9 @@
 
 # Romanjo Art QA
 
-**Romanjo: AI design feedback for images, UI, art and generated work.**
+**A render can look finished and still not hold up in review. We want to make that critique visible.**
 
-**Don't generate more.**<br>
-**Decide what deserves to exist.**
-
-Most tools are built to make more; Romanjo is built for the moment before you do: the moment you look at a piece and decide whether it earns its place.
+Romanjo Art QA is a small, open part of [Romanjo Art](https://romanjo.art). We built it for artists, designers, and the people who have to decide which image stays. It returns structured feedback: where attention lands, where composition or color breaks, and what to change next. It does not generate another image, and it does not give a single beauty score. We try not to talk over the people who know the work best.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-111111.svg)](LICENSE)
 [![AI design feedback](https://img.shields.io/badge/AI-design-feedback-d7ff3f.svg)](SKILL.md)
@@ -22,19 +19,25 @@ Most tools are built to make more; Romanjo is built for the moment before you do
 
 ## English
 
-Romanjo Art QA is the open part of [Romanjo Art](https://romanjo.art). Give it an image, and it writes down what it can actually see: where the eye is likely to land, how the composition and color are holding, what feels off, what could change next.
+### Why we built this
 
-It does not generate pictures, and it will not hand back a single beauty score. It separates what was observed from what was interpreted, so you can follow the reasoning, argue with it, or keep the part that matters to you.
+We are not here to tell artists how to see. We are here to run a careful design review: put the evidence on the table and read the work, not just the render.
 
-### What we care about
+**The "looks right, feels wrong" problem.** A scheme can look convincing at first glance and still not hold up the moment you ask how it works. Romanjo is a careful reviewer that goes one image at a time and asks that question.
 
-**Provenance, without playing judge.** A lot of images now arrive with no clear past. Somebody made them, often across many hands and many versions, and that history can be lost in a screenshot or a retrained model. Romanjo helps you record what survives: signed Content Credentials or C2PA data, a creator's own statement, source links, and visual-similarity leads. Those leads can open a conversation about credit or uncredited remixing. They cannot issue a verdict. Similarity is not proof of copying, and a score is not an author. Missing metadata means "we don't know," not "guilty." The final call stays with people, and the record keeps a door open for correction.
+**The sameness problem.** The pixels are immaculate and the pace is fast, but the feeling is not there. Romanjo separates what the image is actually doing—attention, composition, color, and depth—from what only looks polished.
 
-**The artist behind the image, treated as a person.** We want the human who made the work to be found and credited, not reduced to a style. When a lawful, declared reference index exists, Romanjo can offer a few artist or work candidates as open leads, never as a definitive name. Style is not identity. Registration, corrections, counter-evidence and appeals all belong to the same record, because getting an artist wrong is a real cost, not a rounding error.
+**The consistency problem.** A jury that changes its mind every day is hard to act on. Romanjo returns the same fields each time and separates what it saw from what it interpreted, so the reasoning can be checked and challenged.
 
-**Taste as something you can build.** The commercial side of Romanjo Art is working toward a reviewer that remembers how you and your team decide, can point to the last time a similar piece was rejected, and can disagree with you for reasons you can inspect. That is Taste QA: a standard that gets sharper with use, while every change stays visible and reversible. This repository is the honest, public part of that ambition. The contracts and evidence discipline live here; the private machinery does not.
+### What we try to record
 
-### What you get
+**Where a work came from.** We do not pretend to know an image's history. We record what remains: signed Content Credentials or C2PA data, the creator's own words, source links, and visual-similarity leads. A lead is not a verdict. Missing metadata means "unknown," not "guilty." The people involved make the final call.
+
+**Who made it.** We only offer artist or work candidates when a lawful, declared reference index exists, and only as open leads—never as a definitive name. Style is not identity. Corrections and counter-evidence stay in the same record, because getting an artist wrong costs trust and money.
+
+**How a team decides.** On the commercial side, we are building a reviewer that remembers past decisions, shows why a similar piece was rejected before, and can disagree with reasons you can inspect. Every change is visible and reversible.
+
+### What is public here
 
 - `SKILL.md`, an agent workflow that returns valid review JSON.
 - `references/review-schema.json`, the portable output contract.
@@ -59,8 +62,8 @@ One-click launch:
 For a local checkout:
 
 ```bash
-git clone https://github.com/Hikohikoyan/romanjo-art-qa.git romanjo-review
-cd romanjo-review
+git clone https://github.com/Hikohikoyan/romanjo-art-qa.git romanjo-art-qa
+cd romanjo-art-qa
 python3 -m http.server 8000 --directory assets
 ```
 
@@ -68,23 +71,22 @@ To use the review as an Agent Skill, install it from the repository and attach a
 
 ### Where the evidence ends
 
-One honest boundary, before you use it: Romanjo organizes evidence, it does not decide rights. Similarity is a lead. A detector score does not identify an artist or settle copyright. Contested results need a person, a correction path and room for counter-evidence. Read [provenance-and-similarity.md](references/provenance-and-similarity.md) for the full protocol.
+We organize evidence; we do not decide rights. Similarity is a lead. A detector score does not identify an artist or settle copyright. Contested results need a person, a correction path, and room for counter-evidence. Read [provenance-and-similarity.md](references/provenance-and-similarity.md) for the full protocol.
 
-### Co-building
+### Build the standard with us
 
-This part is better with people in it. The public review room is [GitHub Issues](https://github.com/Hikohikoyan/romanjo-art-qa/issues). You can:
+We do not want to run this jury alone. The public review JSON and issue forms are meant to be grown with artists and critics, not handed down.
 
-- submit rights-cleared artwork for critique;
-- propose a hard benchmark case and the evidence it should require;
-- report a false positive or a wrong attribution;
-- join the artist, critic, curator, or researcher network;
-- propose a named benchmark track, exhibition, or sponsorship.
+- Artists: bring rights-cleared work, and let's pin it up and read it together—concept, composition, color, scale, and where it breaks.
+- Designers and critics: bring the schemes that look right at first pin-up but don't hold up under questioning; let's agree on the evidence they need to stand.
+- Researchers: bring false positives and wrong attributions, and let's keep a public correction record.
+- Sponsors: support a named track. Let's keep labels, thresholds, and results independent.
 
-A sponsor can fund a track. It cannot buy its labels, thresholds, or results. Funding and judgment stay separate.
+Funding and judgment stay separate.
 
-### Connection to Romanjo Art
+### The commercial part
 
-This repository is deliberately small. The commercial product, including the review-to-edit workbench, team Taste QA and private adapters, lives at [romanjo.art](https://romanjo.art). Commercial access is by invitation; open a [partnership issue](https://github.com/Hikohikoyan/romanjo-art-qa/issues/new/choose) without posting confidential material.
+This repository is deliberately small. The review-to-edit workbench, team Taste QA, and private adapters live in the commercial product at [romanjo.art](https://romanjo.art). If you want a reviewer that learns how your studio decides, let's talk through a [partnership issue](https://github.com/Hikohikoyan/romanjo-art-qa/issues/new/choose). Please do not post confidential work publicly.
 
 ### Repository map
 
@@ -113,19 +115,25 @@ Artists, critics, curators, designers, researchers and engineers are welcome. St
 
 ## 中文
 
-Romanjo Art QA 是 [Romanjo Art](https://romanjo.art) 的公开部分。给它一张图，它会把它真实看到的东西写下来：视线可能先落在哪里，构图和颜色撑不撑得住，哪里不对劲，下一步可以改什么。
+### 我们为什么做这个
 
-它不生成图片，也不给一个笼统的“美感分”。它把“看到了什么”和“为什么这样判断”分开，所以你能顺着它的思路往下想，也可以反驳它，或者只留下对你有用的那一部分。
+我们不是来教艺术家们怎么看的。我们只想把每一次看图，做成一场小评图：把证据摆到桌上，读作品本身，而不是只看效果图。
 
-### 我们在乎什么
+**“看起来对，用起来不对”。** 一个方案可以第一眼看成立，一旦追问它怎么用、怎么落地，就站不住脚。Romanjo 是个很谨慎的评审器，一次只看一张，专门问这个。
 
-**来源，但不做法官。** 现在很多图片都没有清晰的过去。它可能是某个人做的，也可能经过很多双手、很多个版本，而这些历史常常在一次截图或一次模型重绘里就丢了。Romanjo 帮你把还剩下的线索记下来：有没有签名过的 Content Credentials 或 C2PA 信息、创作者自己怎么说、来源链接、视觉上像谁。这些线索可以打开一场关于署名或未经说明的融图的对话，但它们不能替你下判决。相似不等于抄袭，分数不等于作者，没有元数据只说明“我们不知道”，不等于“它有问题”。最终的决定留给人，也给人留更正的机会。
+**看什么都一样。** 像素很干净，速度也很快，但体块、材质、空间关系都像套模板，感觉没跟上。Romanjo 把这张图真正在做的事——焦点、构图、颜色、深度——和“只是精致”的部分分开。
 
-**作品背后的人，而不是一种风格。** 我们想让做这张图的人被找到、被署名，而不是被压成一种“风格”。只有在一个合法、公开的参考索引存在时，Romanjo 才会给出几位艺术家或作品的候选，作为开放的线索，而不是一个确定的名字。风格不是身份。登记、更正、反证、申诉都写在同一条记录里，因为把一位艺术家认错，不是小事。
+**反馈不稳定。** 一场今天说不对、明天又觉得还行的评图，很难执行。Romanjo 每次都返回相同字段，并把“看到什么”和“怎么解释”分开，方便你核对和反驳。
 
-**品味是可以养成的，不是玄学。** Romanjo Art 的商业侧想做的，是一个记得你和团队怎么下判断、能翻出上一次类似作品为什么被否、并能有理有据地反对你的评审者。这就是 Taste QA：越用越准，而且每一步都能被查看、被撤销。这个仓库是那份野心公开、诚实的一部分。契约和证据纪律在这里，私人机器不在这里。
+### 我们想记录什么
 
-### 你能得到什么
+**作品的来路。** 我们不敢装作知道一张图的历史。我们只记录还剩下的线索：签名过的 Content Credentials 或 C2PA、创作者自己的话、来源链接、视觉相似候选。线索不是判决；相似不等于抄袭；没有元数据只是“未知”，不是“有问题”。最终判断由作品相关的人来做。
+
+**是谁做的。** 只有存在合法、公开的参考索引时，我们才给出艺术家或作品的候选，而且只作为开放线索，绝不是确定的名字。风格不是身份。更正和反证都留在同一条记录里，因为认错艺术家会损失信任和金钱。
+
+**团队怎么判断。** 商业侧，我们在做一个记得过去决策、能指出上次相似作品为什么被否、并给出可复核理由的评审器。每一步都可查看、可撤销。
+
+### 这里公开了什么
 
 - `SKILL.md`，返回有效评审 JSON 的 Agent 工作流。
 - `references/review-schema.json`，可移植的输出契约。
@@ -150,8 +158,8 @@ Romanjo Art QA 是 [Romanjo Art](https://romanjo.art) 的公开部分。给它�
 本地克隆后：
 
 ```bash
-git clone https://github.com/Hikohikoyan/romanjo-art-qa.git romanjo-review
-cd romanjo-review
+git clone https://github.com/Hikohikoyan/romanjo-art-qa.git romanjo-art-qa
+cd romanjo-art-qa
 python3 -m http.server 8000 --directory assets
 ```
 
@@ -159,17 +167,22 @@ python3 -m http.server 8000 --directory assets
 
 ### 证据的边界
 
-用之前先说清楚一条边界：Romanjo 整理证据，但不裁定权利。相似只是线索，检测分数不能识别作者，也不能解决版权问题。有争议的结果需要人、更正路径和反证空间。完整规则见 [公开证据协议](references/provenance-and-similarity.md)。
+我们整理证据，但不裁定权利。相似只是线索，检测分数不能识别作者，也不能解决版权问题。有争议的结果需要人、更正路径和反证空间。完整规则见 [公开证据协议](references/provenance-and-similarity.md)。
 
-### 一起共建
+### 一起定标准
 
-这件事有更多人参与才成立。公开评审室是 [GitHub Issues](https://github.com/Hikohikoyan/romanjo-art-qa/issues)。你可以提交已获授权的作品、提出难例和它应具备的证据、报告误判或错误署名，也可以加入艺术家、评论家、策展人和研究者网络，或提议命名基准专题、展览和赞助。
+这件事我们不想自己定，也不该自己定。公开的 Review JSON 和 Issue 表单，是要和艺术家们、评论家们一起养出来的评图标准。
 
-赞助方可以资助专题，但不能购买标签、阈值或结论。资金和判断保持分离。
+- 艺术家们：带来已获授权的作品，我们一起像评图一样，把它从概念、构图、色彩、尺度到落地拆一遍。
+- 设计师和评论家：带来那些“第一眼成立，越问越站不住”的方案，我们一起把评图时的疑问写清楚：它需要哪些证据才站得住。
+- 研究者：带来误判和错误署名，我们一起留一份公开更正记录。
+- 赞助方：支持一个命名专题；标签、阈值和结果，我们一起保持独立。
 
-### 与 Romanjo Art 的关系
+资金和判断保持分离。
 
-这个仓库故意保持很小。商业产品，包括评审到编辑的工作台、团队 Taste QA 和私有适配，都在 [romanjo.art](https://romanjo.art)。商业访问采用邀请制；请通过[合作 Issue](https://github.com/Hikohikoyan/romanjo-art-qa/issues/new/choose)联系，不要在公开 Issue 里填写机密信息。
+### 商业部分
+
+公开仓库故意保持很小。从评图到改图的工作台、团队 Taste QA 和私有适配，都在 [romanjo.art](https://romanjo.art)。如果你想要一个记得你们工作室怎么决策的评审器，我们一起聊聊。请不要公开提交机密材料。
 
 ### 参与贡献
 
@@ -179,19 +192,25 @@ python3 -m http.server 8000 --directory assets
 
 ## 日本語
 
-Romanjo Art QA は [Romanjo Art](https://romanjo.art) の公開部分です。画像を1枚渡すと、実際に見えることを書き出します。視線がどこへ向かいそうか、構図や色彩が持っているか、どこが引っかかるか、次に何を変えられるか。
+### なぜ作ったか
 
-画像は生成しませんし、単一の「美しさスコア」も返しません。何を見たかと、なぜそう判断したかを分けるので、理由をたどることも、反論することも、自分に必要な部分だけを残すこともできます。
+私たちはアーティストに「どう見るか」を教えたいのではありません。一度のレビューを小さな講評会にしたいのです。証拠を机の上に並べ、パースではなく作品そのものを読みます。
 
-### 私たちが大切にしていること
+**「見た目は正しいのに、使うと違う」。** 案は一見成立していても、どう使うか、どう実現するかを問われた途端、成立しなくなってしまうことがあります。Romanjo は一度に1枚だけを、慎重にレビューし、そこを問います。
 
-**来歴を追う。ただし裁くのは人。** 今の画像の多くには、はっきりした過去がありません。誰かが作り、いくつもの手とバージョンを経て、スクリーンショットや再学習の中で歴史が失われていく。Romanjo は、残っている手がかりを記録します。署名された Content Credentials や C2PA があるか、作り手自身の言葉、出典、視覚的な類似候補。それらはクレジットや無断リミックスの話を始める材料にはなりますが、判決は出しません。類似はコピーの証明ではなく、スコアは作者ではなく、メタデータがないことは「わからない」であって「怪しい」ではありません。最後の判断は人に残し、記録を正す道も残します。
+**どれも同じに見える。** ピクセルは完璧で、速さもありますが、ヴォリューム、マテリアル、空間の関係がどれもテンプレートのようで、感触が追いついていません。Romanjo は、その画像が実際に何をしているかを「ただ整っているだけ」から分けます。
 
-**作品の背後にいる人間を、スタイルにしない。** その作品を作った人が見つかり、クレジットされることを目指しています。法的に整備された公開インデックスがある場合に限り、作家や作品の候補を、開かれた手がかりとして返します。決定的な名前ではありません。スタイルはアイデンティティではありません。登録、訂正、反証、異議申し立ても同じ記録に含めます。作家を取り違えることは、小さな間違いではないからです。
+**フィードバックが安定しない。** 今日は違和感があっても、明日は「まあいいか」になる講評は実行しにくいものです。Romanjo は毎回同じ項目を返し、見たことと解釈を分けるので、確認したり反論したりできます。
 
-**テイストは育てるもの。** Romanjo Art の商用側が目指しているのは、あなたとチームの判断を覚え、似た作品が以前なぜ却下されたかを示し、理由つきで反論できるレビュアーです。それが Taste QA です。使うほど鋭くなり、すべての変更を確認し、巻き戻せます。このリポジトリは、その野心の公開された正直な部分です。契約と証拠の規律をここに置き、非公開の仕組みは外に置きます。
+### 記録したいもの
 
-### 得られるもの
+**作品の来歴。** 私たちは画像の歴史を知っているふりをしません。残っている手がかりだけを記録します。Content Credentials や C2PA、作り手自身の言葉、出典、視覚的な類似候補です。手がかりは判決ではありません。類似はコピーの証明ではなく、メタデータがないことは「不明」であって「怪しい」ではありません。最終判断は、その作品に関わる人たちが行います。
+
+**誰が作ったか。** 法的に整備された公開インデックスがある場合に限り、作家や作品の候補を、開かれた手がかりとしてのみ返します。決定的な名前ではありません。スタイルはアイデンティティではありません。訂正と反証は同じ記録に残します。作家を取り違えることは、信頼とお金を失うことだからです。
+
+**チームがどう判断するか。** 商用側では、過去の判断を覚え、似た作品が以前なぜ却下されたかを示し、確認できる理由つきで反論できるレビュアーを作っています。すべての変更を確認でき、巻き戻せます。
+
+### ここで公開しているもの
 
 - `SKILL.md`：有効なレビュー JSON を返す Agent ワークフロー。
 - `references/review-schema.json`：持ち運び可能な出力契約。
@@ -216,8 +235,8 @@ Romanjo Art QA は [Romanjo Art](https://romanjo.art) の公開部分です。�
 ローカルにクローンした場合は：
 
 ```bash
-git clone https://github.com/Hikohikoyan/romanjo-art-qa.git romanjo-review
-cd romanjo-review
+git clone https://github.com/Hikohikoyan/romanjo-art-qa.git romanjo-art-qa
+cd romanjo-art-qa
 python3 -m http.server 8000 --directory assets
 ```
 
@@ -225,17 +244,22 @@ Agent Skill として使う場合は、Skill に対応した Agent にこのリ�
 
 ### 証拠の限界
 
-使う前に、ひとつだけ正直な境界を。Romanjo は証拠を整理しますが、権利を裁定しません。類似は手がかりであり、検出スコアで作者を特定したり著作権を解決したりはしません。争いのある結果には、人による確認、訂正手順、反証の余地が必要です。詳しくは[公開エビデンス手順](references/provenance-and-similarity.md)をご覧ください。
+私たちは証拠を整理しますが、権利を裁定しません。類似は手がかりであり、検出スコアで作者を特定したり著作権を解決したりはしません。争いのある結果には、人による確認、訂正手順、反証の余地が必要です。詳しくは[公開エビデンス手順](references/provenance-and-similarity.md)をご覧ください。
 
-### 共同でつくる
+### 一緒に基準をつくる
 
-この部分は、人が集まって初めて良くなります。公開レビュー室は [GitHub Issues](https://github.com/Hikohikoyan/romanjo-art-qa/issues) です。権利を確認した作品の投稿、難しい事例と求める証拠の提案、誤検出や誤帰属の報告、作家・評論家・キュレーター・研究者ネットワークへの参加、命名ベンチマークトラックや展示・スポンサーの提案を受け付けています。
+この基準は私たちだけで決めたくありません。公開された Review JSON と Issue フォームは、アーティストや評論家と一緒に育てていく講評会のようなものです。
 
-スポンサーはトラックに資金を出せますが、ラベル、しきい値、結果を買うことはできません。資金と判断は分離されます。
+- アーティスト：権利を確認した作品を持ち寄って、一緒に講評会のように、コンセプト、構図、色彩、スケール、実現まで読み解きましょう。
+- デザイナー・評論家：「一見成立しているのに、問い直すと成立しない」案を持ち寄って、講評で問うべき証拠を一緒に決めましょう。
+- 研究者：誤検出や誤帰属を持ち寄って、公開の訂正記録を一緒に残しましょう。
+- スポンサー：命名トラックを支援できます。ラベル、しきい値、結果は一緒に独立させておきます。
 
-### Romanjo Art との関係
+資金と判断は分離されます。
 
-このリポジトリは意図的に小さくしています。レビューから編集までのワークベンチ、チーム向け Taste QA、非公開アダプターを含む商用プロダクトは [romanjo.art](https://romanjo.art) にあります。商用利用は招待制です。[連携用 Issue](https://github.com/Hikohikoyan/romanjo-art-qa/issues/new/choose) から問い合わせ、公開 Issue には機密情報を投稿しないでください。
+### 商用パート
+
+このリポジトリは意図的に小さくしています。講評から編集までのワークベンチ、チーム向け Taste QA、非公開アダプターは [romanjo.art](https://romanjo.art) にあります。あなたのスタジオの判断を覚えるレビュアーが欲しい場合は、[連携用 Issue](https://github.com/Hikohikoyan/romanjo-art-qa/issues/new/choose) から一緒に相談させてください。公開 Issue には機密情報を投稿しないでください。
 
 ### コントリビューション
 
@@ -249,6 +273,6 @@ Code and documentation are available under the [MIT License](LICENSE). Artwork, 
 
 <div align="center">
 
-**Don't generate more. Decide what deserves to exist.**
+**See the work. Decide what stays. That is the part we help with.**
 
 </div>

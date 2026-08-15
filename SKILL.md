@@ -1,9 +1,9 @@
 ---
-name: romanjo-review
-description: Analyze supplied artwork, photography, UI, concept art, or generated imagery into a structured Romanjo Review covering visible evidence, likely attention, composition, color, depth, narrative, and actionable guidance. Use when Codex needs to critique an image, produce review JSON, prepare an artwork submission, or document provenance and similarity concerns without making authorship or legal determinations.
+name: romanjo-art-qa
+description: Analyze supplied artwork, photography, UI, concept art, or generated imagery into a structured Romanjo Art QA review covering visible evidence, likely attention, composition, color, depth, narrative, and actionable guidance. Use when Codex needs to critique an image, produce review JSON, prepare an artwork submission, or document provenance and similarity concerns without making authorship or legal determinations.
 ---
 
-# Romanjo Review
+# Romanjo Art QA
 
 Produce portable review data without claiming pixel measurements that the host cannot observe.
 
@@ -15,12 +15,17 @@ Produce portable review data without claiming pixel measurements that the host c
 4. Return one JSON object per image that conforms exactly to the schema. Use normalized coordinates from `0.0` to `1.0`, measured from the top-left. Use concise evidence statements grounded in visible features.
 5. Set uncertain optional observations to `null` only where the schema permits it. Never invent text, objects, camera data, authorship, or intent.
 6. Save the JSON when the user asks for an artifact.
-7. When a user needs a lightweight browser example, serve `assets/` over a
-   local HTTP server and open `assets/demo.html`. The free read-only kit loads
-   `example-review.json`, converts normalized evidence to the artifact's native
-   image coordinate space, and renders limited regions, structural lines,
-   saliency points, and raw histogram bins. Copy `assets/components/` when a
-   project needs only the reusable renderer.
+7. When a user wants the review as a browser interface for a specific image,
+   write the generated review JSON to `generated-review.json` at the repository
+   root, place or copy the reviewed image into `assets/` with a stable name
+   such as `review-input.<ext>`, serve the repository root over a local HTTP
+   server, and open
+   `/?image=assets/review-input.<ext>&review=generated-review.json`. The page
+   switches to the same analysis/preview interface and renders that review.
+   It also keeps a file input so the user can choose another local image for a
+   deterministic browser-side fallback. The preview includes a **Copy prompt**
+   button that exports `generation_guidance` for downstream generation tools.
+   No upload or private service call is made.
 
 ## Output contract
 
